@@ -98,6 +98,7 @@ def prepare_enviroment():
     k_diffusion_commit_hash = os.environ.get('K_DIFFUSION_COMMIT_HASH', "f4e99857772fc3a126ba886aadf795a332774878")
     codeformer_commit_hash = os.environ.get('CODEFORMER_COMMIT_HASH', "c5b4593074ba6214284d6acd5f1719b6c5d739af")
     blip_commit_hash = os.environ.get('BLIP_COMMIT_HASH', "48211a1594f1321b00f14c9f7a5b4813144b2fb9")
+    clipseg_commit_hash  = os.environ.get('CLIPSEG_COMMIT_HASH', "41d9ba2ab85009105ab3fe92064dea029b99c712")
 
     args = shlex.split(commandline_args)
 
@@ -141,6 +142,7 @@ def prepare_enviroment():
     git_clone("https://github.com/crowsonkb/k-diffusion.git", repo_dir('k-diffusion'), "K-diffusion", k_diffusion_commit_hash)
     git_clone("https://github.com/sczhou/CodeFormer.git", repo_dir('CodeFormer'), "CodeFormer", codeformer_commit_hash)
     git_clone("https://github.com/salesforce/BLIP.git", repo_dir('BLIP'), "BLIP", blip_commit_hash)
+    git_clone("https://github.com/timojl/clipseg.git", repo_dir('clipseg'), "Clipseg", clipseg_commit_hash)
 
     if not is_installed("lpips"):
         run_pip(f"install -r {os.path.join(repo_dir('CodeFormer'), 'requirements.txt')}", "requirements for CodeFormer")
