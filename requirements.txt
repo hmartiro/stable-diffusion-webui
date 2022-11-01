@@ -4,10 +4,12 @@ fairscale==0.4.4
 fonts
 font-roboto
 gfpgan
-gradio==3.4b3
+gradio==3.5
 invisible-watermark
 numpy
 omegaconf
+opencv-python
+requests
 piexif
 Pillow
 pytorch_lightning
@@ -23,4 +25,5 @@ resize-right
 torchdiffeq
 kornia
 lark
-functorch
+inflection
+GitPython
